@@ -3,10 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Thank you — Eureka Fieldworks</title>
-  <meta name="description" content="Your website build is booked. Here's what happens next, plus optional care plans to keep your site working after launch." />
-  <meta name="robots" content="noindex" />
-  <link rel="canonical" href="https://eurekafieldworks.com/thank-you/" />
+  <title>Eureka Fieldworks — Websites for Landscaping &amp; Tree Care Companies</title>
+  <meta name="description" content="Eureka Fieldworks builds fast, mobile-first websites for landscaping and tree care companies in Maricopa County, AZ — designed to turn Google searches into estimate calls. See a free concept of your new site before you pay anything." />
+  <link rel="canonical" href="https://eurekafieldworks.com/" />
+  <meta property="og:title" content="Eureka Fieldworks — Websites for Landscaping &amp; Tree Care Companies" />
+  <meta property="og:description" content="Your next customer Googles you first. We build websites that turn those searches into estimate calls. Free concept first — no calls, no pressure." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://eurekafieldworks.com/" />
+  <meta property="og:image" content="https://pub.hyperagent.com/api/published/pbf01M4MFH5VM_A9XQATK5CHTPK3GQ/julio-before-after.png" />
   <style>
     :root{
       --green:#173f2c; --green-2:#1d4a33; --cream:#faf6ef; --paper:#fffdf8;
@@ -81,7 +85,10 @@
     .step p{margin:0;color:var(--muted);font-size:.98rem}
 
     /* Pricing */
-    .price-main{background:var(--paper);border:2px solid var(--green);border-radius:var(--radius);padding:1.6rem 1.7rem;max-width:40rem}
+    .price-row{display:grid;grid-template-columns:1.15fr 1fr;gap:1rem;align-items:stretch}
+    .price-main{background:var(--paper);border:2px solid var(--green);border-radius:var(--radius);padding:1.6rem 1.7rem;position:relative}
+    .price-main.lite{border-color:var(--line)}
+    .badge{display:inline-block;background:var(--sand);color:#231a05;font-size:.78rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;border-radius:999px;padding:.28rem .85rem;margin-bottom:.7rem}
     .price-main .amount{font-family:Georgia,serif;font-size:2.2rem;color:var(--green);font-weight:700}
     .price-main ul{margin:.8rem 0 0;padding-left:1.2rem;color:var(--muted)}
     .addons{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
@@ -104,7 +111,7 @@
       nav{gap:.65rem;font-size:.92rem}
       .hero{padding:2.6rem 0 2rem}
       .hero h1{font-size:2.05rem}
-      .grid,.grid.two,.steps,.addons{grid-template-columns:1fr}
+      .grid,.grid.two,.steps,.addons,.price-row{grid-template-columns:1fr}
       nav{gap:.8rem}
     }
   </style>
@@ -115,59 +122,223 @@
   <div class="wrap bar">
     <a class="brand" href="/">EUREKA <span>FIELDWORKS</span></a>
     <nav aria-label="Main">
-      <a href="/#work">Example work</a>
-      <a href="/#process">How it works</a>
-      <a href="/#pricing">Pricing</a>
-      <a href="/#about">About</a>
-      <a class="btn" href="/#contact">Request a free concept</a>
+      <a href="#work">Example work</a>
+      <a href="#process">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
+      <a class="btn" href="#contact">Request a free concept</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <section class="wrap hero">
-    <p class="eyebrow">Payment received</p>
-    <h1>You&rsquo;re booked &mdash; here&rsquo;s what happens next.</h1>
-    <p class="lede">Thank you. Your website build is now in our queue. Everything from here happens by email &mdash; no calls, no meetings.</p>
-  </section>
+  <!-- HERO -->
+  <div class="wrap hero">
+    <p class="eyebrow">Websites for landscaping &amp; tree care companies · Maricopa County, AZ</p>
+    <h1>Your next customer Googles you first. What do they find?</h1>
+    <p class="lede">Eureka Fieldworks builds fast, mobile-first websites for landscaping and tree care companies — the kind of site that turns a quick search into a call for an estimate. Before you pay anything, we build a free concept of your new site so you can see exactly what you'd be getting.</p>
+    <div class="cta-row">
+      <a class="btn" href="#work">See an example</a>
+      <a class="btn light" href="#contact">Request a free concept</a>
+    </div>
+    <p class="fineprint">Local and owner-operated. Everything is handled by email, on your schedule — no sales calls, no pressure.</p>
+  </div>
 
-  <section class="wrap" aria-labelledby="next-h">
-    <h2 id="next-h">What happens next</h2>
-    <div class="steps">
-      <div class="step">
-        <span class="num">1</span>
-        <h3>We email you</h3>
-        <p>We&rsquo;ll write to the email address from your payment with the next steps and what we need from you.</p>
+  <!-- PROBLEM -->
+  <section class="wrap" aria-labelledby="problem-h">
+    <h2 id="problem-h">Your website is often the first impression</h2>
+    <p class="sub">Before calling, a homeowner may look your company up online. What they find — a slow site, a confusing site, or no site at all — can shape whether you get the call.</p>
+    <div class="grid">
+      <div class="card">
+        <img class="card-img" src="images/problem-phone.jpg" alt="A homeowner in their front yard looking at a smartphone" loading="lazy" />
+        <div class="card-body">
+        <h3>Hard to use on a phone</h3>
+        <p>If a customer lands on your site from their phone and your number isn't one tap away, reaching you becomes work — and a customer who can't reach you easily may simply try the next company.</p>
+        </div>
       </div>
-      <div class="step">
-        <span class="num">2</span>
-        <h3>You send the details</h3>
-        <p>One email back with your business name, your current website link (or &ldquo;no website yet&rdquo;), your services, the cities you serve, and anything you&rsquo;d like us to know.</p>
+      <div class="card">
+        <img class="card-img" src="images/problem-overgrown.jpg" alt="An overgrown, untrimmed front yard" loading="lazy" />
+        <div class="card-body">
+        <h3>Services buried or missing</h3>
+        <p>If visitors can't quickly see what you do and where you work, they may never learn you offer it — and may end up contacting a company that made those details easier to find.</p>
+        </div>
       </div>
-      <div class="step">
-        <span class="num">3</span>
-        <h3>We build, you review, we launch</h3>
-        <p>We build your site, you get one revision round, and then we launch it on your domain.</p>
+      <div class="card">
+        <img class="card-img" src="images/problem-reviews.jpg" alt="A hand holding a phone showing gold star ratings" loading="lazy" />
+        <div class="card-body">
+        <h3>Reviews nowhere to be seen</h3>
+        <p>When visitors can easily find your reviews, your good reputation can do real selling for you. If your Google reviews are buried or missing, visitors may miss a good reason to choose you.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="wrap" aria-labelledby="plans-h">
-    <h2 id="plans-h">Keep it working after launch</h2>
-    <p class="sub">Your site stays live and current without you thinking about it. Add a plan now or anytime &mdash; cancel anytime by email.</p>
-    <div class="addons" style="grid-template-columns:repeat(2,1fr)">
-      <div class="addon">
-        <h3>Care plan</h3>
-        <div class="p">$197/month</div>
-        <p>Hosting, updates, and small content changes handled for you.</p>
-        <p><a href="https://buy.stripe.com/28E5kE5Ls6AA1AUgJc4Ja07" style="font-weight:700">Subscribe &mdash; $197/month</a></p>
+  <!-- WHAT YOU GET -->
+  <section class="wrap" aria-labelledby="build-h">
+    <h2 id="build-h">What we build</h2>
+    <p class="sub">A complete website built around one job: getting the right customers to call you for estimates.</p>
+    <div class="grid">
+      <div class="card">
+        <img class="card-img" src="images/build-mobile.jpg" alt="A hand holding a phone showing a clean landscaping website with a call button" loading="lazy" />
+        <div class="card-body">
+        <h3>Mobile-first design</h3>
+        <p>Built for phones first, with tap-to-call in the header and an estimate request form that's easy to finish.</p>
+        </div>
       </div>
-      <div class="addon">
-        <h3>Growth plan</h3>
-        <div class="p">$297/month</div>
-        <p>Everything in Care, plus ongoing improvements to keep the site working harder.</p>
-        <p><a href="https://buy.stripe.com/aFa7sMfm20cca7q64y4Ja08" style="font-weight:700">Subscribe &mdash; $297/month</a></p>
+      <div class="card">
+        <img class="card-img" src="images/build-services.jpg" alt="A tree care worker trimming a large tree" loading="lazy" />
+        <div class="card-body">
+        <h3>Your services, up front</h3>
+        <p>Every service you offer, clearly listed with your service area — so visitors know you do the work before they ever call.</p>
+        </div>
       </div>
+      <div class="card">
+        <img class="card-img" src="images/build-reviews.jpg" alt="A homeowner standing in a freshly landscaped front yard" loading="lazy" />
+        <div class="card-body">
+        <h3>Reviews front and center</h3>
+        <p>Your Google rating and reviews displayed on the site, plus a QR code customers can scan to leave you more.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img" src="images/build-bilingual.jpg" alt="A landscaper talking with a homeowner on a front porch" loading="lazy" />
+        <div class="card-body">
+        <h3>English &amp; Spanish</h3>
+        <p>If your customers speak Spanish, your site can too — a full bilingual version, not an afterthought.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img" src="images/build-clean.jpg" alt="A clean, professionally landscaped desert front yard" loading="lazy" />
+        <div class="card-body">
+        <h3>Fast and clean</h3>
+        <p>Pages that load quickly and stay uncluttered. No pop-ups, no clutter, nothing between the customer and the call.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img" src="images/build-photos.jpg" alt="A finished backyard with a new stone patio and green lawn" loading="lazy" />
+        <div class="card-body">
+        <h3>Photos of your work</h3>
+        <p>Real photos of your jobs and your crew — the proof homeowners look for before trusting someone with their yard.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="work" id="work" aria-labelledby="work-h">
+    <div class="wrap">
+      <h2 id="work-h">Example: a concept we built</h2>
+      <p class="sub">This is a real concept we created for a Mesa tree care and landscaping company whose website had gone offline — their domain showed a parked page, so customers searching for them found nothing. Here's what we designed to replace it:</p>
+      <video controls preload="none" poster="https://pub.hyperagent.com/api/published/pbf01M4MFH5VM_A9XQATK5CHTPK3GQ/julio-before-after.png" aria-label="78-second narrated walkthrough of the concept website">
+        <source src="https://pub.hyperagent.com/api/published/pbf01M4MFH66Y_4NT1JPGZ86ZCWEVX/julio-v9-walkthrough.mp4" type="video/mp4" />
+        Your browser can't play this video — you can <a href="https://pub.hyperagent.com/api/published/pbf01M4MFH66Y_4NT1JPGZ86ZCWEVX/julio-v9-walkthrough.mp4" style="color:#fff">watch it here</a> instead.
+      </video>
+      <p class="disclosure">This is an independent concept created by Eureka Fieldworks to demonstrate our work. It is not affiliated with or endorsed by the business shown, and no results are promised or implied — every company's situation is different.</p>
+      <div class="cta-row">
+        <a class="btn" href="https://pub.hyperagent.com/p/RuazeNuRmIgpq3pG37aM5bMlIcDrXFrgkFXU0mfvFjE" target="_blank" rel="noopener">View the full concept site</a>
+        <a class="btn light" href="#contact">Request your free concept</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="wrap" id="process" aria-labelledby="process-h">
+    <h2 id="process-h">How it works</h2>
+    <p class="sub">No meetings, no calls, no obligation. The whole process runs by email, whenever you have a few minutes.</p>
+    <div class="steps">
+      <div class="step">
+        <span class="num">1</span>
+        <h3>We build your free concept</h3>
+        <p>We research your business and design a concept of your new website. You get a short narrated video that walks you through it, plus a link to explore it yourself.</p>
+      </div>
+      <div class="step">
+        <span class="num">2</span>
+        <h3>You review it on your time</h3>
+        <p>Look it over whenever it suits you. Tell us what to keep and what to change with a short form — one full revision round is included before launch.</p>
+      </div>
+      <div class="step">
+        <span class="num">3</span>
+        <h3>We launch your real site</h3>
+        <p>If you like the concept, we build and launch the finished website on your domain. If you don't, you've spent nothing and lost nothing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="wrap" id="pricing" aria-labelledby="pricing-h">
+    <h2 id="pricing-h">Straightforward pricing</h2>
+    <p class="sub">One clear price to get your website built and launched. No long-term contract required.</p>
+    <div class="price-row">
+      <div class="price-main">
+        <span class="badge">Recommended</span>
+        <div class="amount">$1,500</div>
+        <p style="margin:.2rem 0 0;color:var(--muted)">One-time — website implementation &amp; launch</p>
+        <ul>
+          <li>Full website built from your approved concept</li>
+          <li>Mobile-first design with tap-to-call and estimate form</li>
+          <li>Services, service area, photos, and Google reviews</li>
+          <li>Launched on your own domain</li>
+        </ul>
+        <div class="cta-row" style="margin-top:1rem">
+          <a class="btn" href="https://buy.stripe.com/dRm8wQ8XEaQQgvO3Wq4Ja04">Buy now — $1,500</a>
+        </div>
+        <p class="fineprint">Prefer to see it first? <a href="#contact">Request a free concept</a> — look it over before you pay anything.</p>
+      </div>
+      <div class="price-main lite">
+        <div class="amount">$750</div>
+        <p style="margin:.2rem 0 0;color:var(--muted)">One-time — Site Live Lite</p>
+        <ul>
+          <li>A clean, fast one-page website for your business</li>
+          <li>Tap-to-call, services, and service area</li>
+          <li>Launched on your own domain</li>
+        </ul>
+        <div class="cta-row" style="margin-top:1rem">
+          <a class="btn" href="https://buy.stripe.com/fZu8wQ2zgaQQ6VeboS4Ja05">Buy now — $750</a>
+        </div>
+        <p class="fineprint">The essentials, live fast — upgrade to the full build anytime.</p>
+      </div>
+    </div>
+    <p class="fineprint">We take on a maximum of five new websites a month, so each one gets proper attention.</p>
+  </section>
+
+  <!-- FOLLOW-UP ENGINE -->
+  <section class="wrap" id="followup" aria-labelledby="followup-h">
+    <h2 id="followup-h">Already have a website you&rsquo;re happy with?</h2>
+    <p class="sub">Then don&rsquo;t rebuild it. If your site already brings in work but estimate requests still go quiet while you&rsquo;re out on jobs, this is the next step — not a new website:</p>
+    <div class="price-main" style="max-width:40rem">
+      <div class="amount">$497</div>
+      <p style="margin:.2rem 0 0;color:var(--muted)">One-time — Estimate Follow-Up Engine</p>
+      <ul>
+        <li>Automated follow-up for every estimate request</li>
+        <li>Fewer leads go cold while you&rsquo;re out on jobs</li>
+        <li>Works alongside the website you already have</li>
+      </ul>
+      <div class="cta-row" style="margin-top:1rem">
+        <a class="btn" href="https://buy.stripe.com/6oU28s7TA5ww4N6boS4Ja06">Buy now — $497</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="wrap" id="about" aria-labelledby="about-h">
+    <h2 id="about-h">About Eureka Fieldworks</h2>
+    <p class="sub" style="max-width:64ch">Eureka Fieldworks is a Mesa, Arizona studio, and our work is websites for landscaping and tree care companies — designed, built, and launched by the same small team you'll email with. We're small on purpose, and this site is itself an example of our approach: fast, clear, and built to be read on a phone. (Eureka Fieldworks also develops other small ventures; this website service is our current focus.)</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="wrap" aria-labelledby="contact-h">
+    <div class="contact" id="contact">
+      <h2 id="contact-h">Request your free concept</h2>
+      <p>Send us one email with the details below and we can get started right away — no back-and-forth needed. The button opens an email with this list already in it; you just add your answers.</p>
+      <ul class="needs">
+        <li><strong>Your business name</strong></li>
+        <li><strong>Do you have a website today?</strong> If yes, paste the link so we can review it. If no, just write "no website yet" — that tells us to design from scratch.</li>
+        <li><strong>The services you offer</strong> and the cities you work in</li>
+        <li><strong>Anything you'd like us to know</strong> — ideas, suggestions, or a website you've seen that you like</li>
+      </ul>
+      <div class="cta-row">
+        <a class="btn" href="mailto:yvinson@eurekafieldworks.com?subject=Free%20concept%20request%20—%20%5Byour%20business%20name%5D&amp;body=Business%20name%3A%0ADo%20you%20have%20a%20website%20today%3F%20%28yes%20or%20no%29%3A%0AIf%20yes%2C%20your%20current%20website%20link%3A%0AIf%20no%2C%20write%20%22no%20website%20yet%22%3A%0AServices%20you%20offer%3A%0ACities%20you%20serve%3A%0AAnything%20you%20would%20like%20us%20to%20know%20%28ideas%2C%20suggestions%2C%20websites%20you%20like%29%3A">Request your free concept by email</a>
+      </div>
+      <p class="fineprint">Prefer to look around first? <a href="#work">Watch the example walkthrough</a> — that's exactly what you'd receive.</p>
     </div>
   </section>
 </main>
@@ -183,7 +354,7 @@
       Websites for landscaping &amp; tree care companies<br />
       <a href="mailto:yvinson@eurekafieldworks.com">Email us</a>
     </div>
-    <div>&copy; 2026 Eureka Fieldworks</div>
+    <div>© 2026 Eureka Fieldworks</div>
   </div>
 </footer>
 
