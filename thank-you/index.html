@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thank you — Eureka Fieldworks</title>
+  <meta name="description" content="Your website build is booked. Here's what happens next, plus optional care plans to keep your site working after launch." />
+  <meta name="robots" content="noindex" />
+  <link rel="canonical" href="https://eurekafieldworks.com/thank-you/" />
+  <style>
+    :root{
+      --green:#173f2c; --green-2:#1d4a33; --cream:#faf6ef; --paper:#fffdf8;
+      --sand:#c9a25e; --ink:#1c2321; --muted:#4c554f; --line:#e4ddcb;
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;color:var(--ink);background:var(--cream)}
+    h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:700;line-height:1.2;color:var(--green);margin:0}
+    a{color:var(--green-2)}
+    .wrap{max-width:68rem;margin:0 auto;padding:0 1.25rem}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:10;background:rgba(250,246,239,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(4px)}
+    .bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem 0;flex-wrap:wrap}
+    .brand{font-family:Georgia,serif;font-weight:700;font-size:1.25rem;letter-spacing:.02em;color:var(--green);text-decoration:none}
+    .brand span{color:var(--sand)}
+    nav{display:flex;gap:1.15rem;flex-wrap:wrap;align-items:center}
+    nav a{text-decoration:none;font-size:.95rem;color:var(--ink)}
+    nav a:hover{color:var(--green-2);text-decoration:underline}
+    .btn{display:inline-block;background:var(--green);color:#fff;text-decoration:none;padding:.65rem 1.2rem;border-radius:999px;font-weight:600;font-size:.95rem;border:1px solid var(--green)}
+    .btn:hover{background:var(--green-2)}
+    .btn.light{background:transparent;color:var(--green)}
+    .btn.light:hover{background:#efe8d8}
+    nav .btn{color:#fff;padding:.5rem 1rem}
+    nav .btn:hover{color:#fff;text-decoration:none}
+
+    /* Hero */
+    .hero{padding:4rem 0 3rem;text-align:left}
+    .eyebrow{font-size:.85rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8a6d2f;margin:0 0 1rem}
+    .hero h1{font-size:2.7rem;max-width:22ch}
+    .hero p.lede{font-size:1.2rem;color:var(--muted);max-width:56ch;margin:1.1rem 0 1.6rem}
+    .cta-row{display:flex;gap:.8rem;flex-wrap:wrap}
+    .fineprint{font-size:.9rem;color:var(--muted);margin-top:1rem}
+
+    section{padding:3rem 0}
+    section[id],#contact{scroll-margin-top:5.25rem}
+    @media (max-width:900px){ section[id],#contact{scroll-margin-top:8.5rem} }
+    section h2{font-size:1.9rem;margin-bottom:.6rem}
+    section .sub{color:var(--muted);max-width:62ch;margin:0 0 1.8rem}
+
+    /* Cards */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .grid.two{grid-template-columns:repeat(2,1fr)}
+    .card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:0;overflow:hidden}
+    .card-img{width:100%;height:180px;object-fit:cover;display:block}
+    .card-body{padding:1.15rem 1.35rem 1.3rem}
+    .card h3{font-size:1.12rem;margin-bottom:.45rem}
+    .card p{margin:0;color:var(--muted);font-size:.98rem}
+    .needs{margin:0 0 1.4rem;padding-left:1.25rem;color:var(--muted);max-width:62ch}
+    .needs li{margin-bottom:.45rem}
+    .needs strong{color:var(--ink)}
+
+    /* Work */
+    .work{background:var(--green);color:#f2eee1}
+    .work h2{color:#fff}
+    .work .sub{color:#d8d2bd}
+    .work figure{margin:0 0 1.4rem}
+    .work img{width:100%;height:auto;border-radius:var(--radius);border:1px solid #2c5a41;display:block}
+    .work figcaption{font-size:.88rem;color:#cfc9b2;margin-top:.55rem}
+    .work video{width:100%;height:auto;border-radius:var(--radius);border:1px solid #2c5a41;background:#000;display:block}
+    .work .btn{background:var(--sand);border-color:var(--sand);color:#231a05}
+    .work .btn.light{background:transparent;color:#fff;border-color:#7fae8f}
+    .disclosure{font-size:.88rem;color:#cfc9b2;border-left:3px solid var(--sand);padding-left:.8rem;margin:1.2rem 0 1.6rem;max-width:64ch}
+
+    /* Steps */
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;counter-reset:step}
+    .step{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:1.3rem 1.35rem}
+    .step .num{display:inline-block;background:var(--green);color:#fff;font-weight:700;border-radius:999px;width:1.9rem;height:1.9rem;line-height:1.9rem;text-align:center;margin-bottom:.7rem}
+    .step h3{font-size:1.1rem;margin-bottom:.4rem}
+    .step p{margin:0;color:var(--muted);font-size:.98rem}
+
+    /* Pricing */
+    .price-main{background:var(--paper);border:2px solid var(--green);border-radius:var(--radius);padding:1.6rem 1.7rem;max-width:40rem}
+    .price-main .amount{font-family:Georgia,serif;font-size:2.2rem;color:var(--green);font-weight:700}
+    .price-main ul{margin:.8rem 0 0;padding-left:1.2rem;color:var(--muted)}
+    .addons{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+    .addon{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:1.1rem 1.2rem}
+    .addon h3{font-size:1.02rem;margin-bottom:.3rem}
+    .addon .p{font-weight:700;color:var(--green)}
+    .addon p{margin:.3rem 0 0;color:var(--muted);font-size:.95rem}
+
+    /* Contact + footer */
+    .contact{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:1.8rem}
+    .contact p{color:var(--muted);max-width:60ch}
+    footer{border-top:1px solid var(--line);padding:2rem 0 2.6rem;margin-top:3rem;font-size:.92rem;color:var(--muted)}
+    footer .cols{display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+    footer strong{color:var(--green)}
+
+    @media (max-width:760px){
+      section[id],#contact{scroll-margin-top:10.5rem}
+      .bar{padding:.6rem 0}
+      .brand{font-size:1.1rem}
+      nav{gap:.65rem;font-size:.92rem}
+      .hero{padding:2.6rem 0 2rem}
+      .hero h1{font-size:2.05rem}
+      .grid,.grid.two,.steps,.addons{grid-template-columns:1fr}
+      nav{gap:.8rem}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="/">EUREKA <span>FIELDWORKS</span></a>
+    <nav aria-label="Main">
+      <a href="/#work">Example work</a>
+      <a href="/#process">How it works</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#about">About</a>
+      <a class="btn" href="/#contact">Request a free concept</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="wrap hero">
+    <p class="eyebrow">Payment received</p>
+    <h1>You&rsquo;re booked &mdash; here&rsquo;s what happens next.</h1>
+    <p class="lede">Thank you. Your website build is now in our queue. Everything from here happens by email &mdash; no calls, no meetings.</p>
+  </section>
+
+  <section class="wrap" aria-labelledby="next-h">
+    <h2 id="next-h">What happens next</h2>
+    <div class="steps">
+      <div class="step">
+        <span class="num">1</span>
+        <h3>We email you</h3>
+        <p>We&rsquo;ll write to the email address from your payment with the next steps and what we need from you.</p>
+      </div>
+      <div class="step">
+        <span class="num">2</span>
+        <h3>You send the details</h3>
+        <p>One email back with your business name, your current website link (or &ldquo;no website yet&rdquo;), your services, the cities you serve, and anything you&rsquo;d like us to know.</p>
+      </div>
+      <div class="step">
+        <span class="num">3</span>
+        <h3>We build, you review, we launch</h3>
+        <p>We build your site, you get one revision round, and then we launch it on your domain.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="plans-h">
+    <h2 id="plans-h">Keep it working after launch</h2>
+    <p class="sub">Your site stays live and current without you thinking about it. Add a plan now or anytime &mdash; cancel anytime by email.</p>
+    <div class="addons" style="grid-template-columns:repeat(2,1fr)">
+      <div class="addon">
+        <h3>Care plan</h3>
+        <div class="p">$197/month</div>
+        <p>Hosting, updates, and small content changes handled for you.</p>
+        <p><a href="https://buy.stripe.com/28E5kE5Ls6AA1AUgJc4Ja07" style="font-weight:700">Subscribe &mdash; $197/month</a></p>
+      </div>
+      <div class="addon">
+        <h3>Growth plan</h3>
+        <div class="p">$297/month</div>
+        <p>Everything in Care, plus ongoing improvements to keep the site working harder.</p>
+        <p><a href="https://buy.stripe.com/aFa7sMfm20cca7q64y4Ja08" style="font-weight:700">Subscribe &mdash; $297/month</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap cols">
+    <div>
+      <strong>Eureka Fieldworks</strong><br />
+      4406 E Main St<br />
+      Mesa, AZ 85205, United States
+    </div>
+    <div>
+      Websites for landscaping &amp; tree care companies<br />
+      <a href="mailto:yvinson@eurekafieldworks.com">Email us</a>
+    </div>
+    <div>&copy; 2026 Eureka Fieldworks</div>
+  </div>
+</footer>
+
+</body>
+</html>
