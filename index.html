@@ -48,7 +48,8 @@
     .fineprint{font-size:.9rem;color:var(--muted);margin-top:1rem}
 
     section{padding:3rem 0}
-    section[id],#contact{scroll-margin-top:4.75rem}
+    section[id],#contact{scroll-margin-top:5.25rem}
+    @media (max-width:900px){ section[id],#contact{scroll-margin-top:8.5rem} }
     section h2{font-size:1.9rem;margin-bottom:.6rem}
     section .sub{color:var(--muted);max-width:62ch;margin:0 0 1.8rem}
 
@@ -96,6 +97,10 @@
     footer strong{color:var(--green)}
 
     @media (max-width:760px){
+      section[id],#contact{scroll-margin-top:10.5rem}
+      .bar{padding:.6rem 0}
+      .brand{font-size:1.1rem}
+      nav{gap:.65rem;font-size:.92rem}
       .hero{padding:2.6rem 0 2rem}
       .hero h1{font-size:2.05rem}
       .grid,.grid.two,.steps,.addons{grid-template-columns:1fr}
@@ -134,7 +139,7 @@
   <!-- PROBLEM -->
   <section class="wrap" aria-labelledby="problem-h">
     <h2 id="problem-h">Your website is often the first impression</h2>
-    <p class="sub">Before a homeowner calls anyone, they look the company up online. What they find — a slow site, a confusing site, or no site at all — shapes whether you get the call.</p>
+    <p class="sub">Before calling, a homeowner may look your company up online. What they find — a slow site, a confusing site, or no site at all — can shape whether you get the call.</p>
     <div class="grid">
       <div class="card">
         <h3>Hard to use on a phone</h3>
@@ -142,11 +147,11 @@
       </div>
       <div class="card">
         <h3>Services buried or missing</h3>
-        <p>If visitors can't quickly see what you do and where you work, they may never learn you offer it — and the call goes to a company that made it obvious.</p>
+        <p>If visitors can't quickly see what you do and where you work, they may never learn you offer it — and may end up contacting a company that made those details easier to find.</p>
       </div>
       <div class="card">
         <h3>Reviews nowhere to be seen</h3>
-        <p>Your good reputation is your best salesperson. If your Google reviews aren't front and center, you're not getting credit for them.</p>
+        <p>Your good reputation is your best salesperson — but only if visitors can see it. If your Google reviews are buried or missing, visitors may miss the strongest reason to choose you.</p>
       </div>
     </div>
   </section>
