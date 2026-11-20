@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Daily checks and fixes for the Zapier, Make, n8n and GoHighLevel automations small businesses rely on for leads.">
+<title>Flowkeep · Automation watch and fix</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+html{-webkit-text-size-adjust:100%}
+body{margin:0}
+.hp{display:none}
+/* Layout: one narrow column, a status-log hero card, plain sections, form at the end */
+:root{
+  --bg:#f5f7f6; --surface:#ffffff; --ink:#14211d; --muted:#4d5d58; --line:#d6dfdb;
+  --accent:#0f6b55; --accent-ink:#ffffff; --ok:#1d7a4a; --warn:#b4560f; --warn-bg:#fdf0e4; --draft:#fff6d6; --draft-ink:#5c4700;
+  --f-display:"IBM Plex Sans",system-ui,sans-serif; --f-body:"IBM Plex Sans",system-ui,sans-serif; --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1614; --surface:#16201d; --ink:#e4ece9; --muted:#9db0aa; --line:#2a3834;
+  --accent:#43b393; --accent-ink:#0b1311; --ok:#5fcf8f; --warn:#f0a35e; --warn-bg:#2e2116; --draft:#2b2610; --draft-ink:#f1dc8a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1614; --surface:#16201d; --ink:#e4ece9; --muted:#9db0aa; --line:#2a3834;
+  --accent:#43b393; --accent-ink:#0b1311; --ok:#5fcf8f; --warn:#f0a35e; --warn-bg:#2e2116; --draft:#2b2610; --draft-ink:#f1dc8a; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6}
+.wrap{max-width:720px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 56px;display:flex;flex-direction:column;gap:48px}
+.draftbar{background:var(--draft);color:var(--draft-ink);font-size:14px;padding:10px 14px;border-radius:8px}
+.brand{font-family:var(--f-mono);font-weight:500;letter-spacing:.04em;font-size:14px;color:var(--muted)}
+h1{font-family:var(--f-display);font-size:clamp(30px,6vw,46px);line-height:1.12;font-weight:700;margin:8px 0 14px;text-wrap:balance}
+h2{font-family:var(--f-display);font-size:24px;line-height:1.25;margin:0 0 12px;text-wrap:balance}
+p{margin:0 0 12px;max-width:65ch}
+.lead{font-size:18px;color:var(--muted)}
+.cta{display:inline-block;background:var(--accent);color:var(--accent-ink);font-weight:600;padding:12px 20px;border-radius:8px;text-decoration:none;border:0;font:inherit;font-weight:600;cursor:pointer}
+.cta:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--warn);outline-offset:2px}
+.log{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow-x:auto;margin-top:24px}
+.log-head{font-family:var(--f-mono);font-size:12px;color:var(--muted);padding:10px 14px;border-bottom:1px solid var(--line);letter-spacing:.03em}
+.log table{width:100%;border-collapse:collapse;font-family:var(--f-mono);font-size:13px;font-variant-numeric:tabular-nums;min-width:440px}
+.log td{padding:8px 14px;border-bottom:1px solid var(--line);white-space:nowrap}
+.log tr:last-child td{border-bottom:0}
+.ok{color:var(--ok)} .bad{color:var(--warn);font-weight:500}
+.bad-row{background:var(--warn-bg)}
+.steps{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.step h3{font-size:16px;margin:0 0 4px}
+.step p{font-size:15px;color:var(--muted);margin:0}
+.plans{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.plan{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:8px}
+.plan h3{margin:0;font-size:18px}
+.price{font-family:var(--f-display);font-size:30px;font-weight:700;font-variant-numeric:tabular-nums}
+.price small{font-size:15px;font-weight:400;color:var(--muted)}
+.plan ul{margin:0;padding-left:18px;color:var(--muted);font-size:15px}
+.faq dt{font-weight:600;margin-top:14px}
+.faq dd{margin:4px 0 0;color:var(--muted)}
+form{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:14px}
+label{font-weight:500;font-size:15px;display:flex;flex-direction:column;gap:6px}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:10px 12px;min-width:0}
+.note{font-size:14px;color:var(--muted);margin:0}
+.done{font-size:15px;color:var(--ok);margin:0}
+.works{font-size:14px;color:var(--muted)}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="brand">FLOWKEEP · FOR OWNERS WHO BUILT THEIR OWN AUTOMATIONS</div>
+    <h1>Your automations break quietly. We catch it before your leads go missing.</h1>
+    <p class="lead">You set up your Zapier, Make, n8n or GoHighLevel workflows yourself so you could get back to running the business. We check them every day, fix what breaks, and tell you in plain words what happened.</p>
+    <a class="cta" href="#signup">Get a free check of one workflow</a>
+    <div class="log" aria-label="Example daily check">
+      <div class="log-head">EXAMPLE DAILY CHECK · 7:00 AM</div>
+      <table>
+        <tr><td>Website form → CRM</td><td class="ok">OK</td><td>42 runs</td></tr>
+        <tr><td>Facebook lead ad → CRM</td><td class="ok">OK</td><td>18 runs</td></tr>
+        <tr class="bad-row"><td>New lead → text reply</td><td class="bad">FAILED</td><td>0 runs since Sat</td></tr>
+        <tr><td>Booked call → calendar + Slack</td><td class="ok">OK</td><td>6 runs</td></tr>
+      </table>
+    </div>
+    <p class="note" style="margin-top:8px">Example only. When a row turns red, we fix it and email you what changed.</p>
+  </header>
+
+  <section>
+    <h2>The problem nobody notices until Monday</h2>
+    <p>A login expires, a form field gets renamed, or an app changes its settings. The automation stops, and nothing tells you. Leads sit in an inbox nobody checks, and follow-ups never go out.</p>
+    <p>Most owners find out when a customer says "I never heard back."</p>
+  </section>
+
+  <section>
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step"><h3>Tell us your workflows</h3><p>Share read access to the automations that touch leads and customers.</p></div>
+      <div class="step"><h3>We check them daily</h3><p>Every run, every error, every flow that went silent.</p></div>
+      <div class="step"><h3>We fix what breaks</h3><p>You get a short email: what broke, what we did, and that it's running again.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Plans</h2>
+    <div class="plans">
+      <div class="plan">
+        <h3>Watch</h3>
+        <div class="price">$99<small> / month</small></div>
+        <ul><li>Up to 10 workflows</li><li>Daily checks</li><li>Up to 2 fixes a month included</li><li>Plain-words email after every fix</li></ul>
+      </div>
+      <div class="plan">
+        <h3>Watch Plus</h3>
+        <div class="price">$199<small> / month</small></div>
+        <ul><li>Up to 30 workflows</li><li>Checks every few hours</li><li>Up to 6 fixes a month included</li><li>Monthly health report</li></ul>
+      </div>
+    </div>
+    <p class="note" style="margin-top:10px">Cancel any time. Your first check of one workflow is free.</p>
+  </section>
+
+  <section class="faq">
+    <h2>Questions</h2>
+    <dl>
+      <dt>Do I need to get on a call?</dt><dd>No. Everything happens by email.</dd>
+      <dt>I built these myself. Will you change how they work?</dt><dd>No. We only fix what broke, and we tell you exactly what we changed.</dd>
+      <dt>Which tools do you work with?</dt><dd>Zapier, Make, n8n and GoHighLevel to start.</dd>
+      <dt>What if a fix needs a bigger rebuild?</dt><dd>We tell you first and quote it before doing anything.</dd>
+    </dl>
+  </section>
+
+  <section id="signup">
+    <h2>Get a free check of one workflow</h2>
+    <form id="signup-form" action="https://api.web3forms.com/submit" method="POST">
+      <!-- Web3Forms access key (public form key, safe to keep in the page). -->
+      <input type="hidden" name="access_key" value="f690a7d1-236b-44dc-912d-326535e0d44b">
+      <input type="hidden" name="subject" value="New Flowkeep free-check request">
+      <input type="hidden" name="from_name" value="Flowkeep landing page">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label for="email">Work email<input id="email" name="email" type="email" autocomplete="email" placeholder="you@yourbusiness.com" required></label>
+      <label for="tool">Which tool runs it?
+        <select id="tool" name="tool"><option>Zapier</option><option>Make</option><option>n8n</option><option>GoHighLevel</option><option>Something else</option></select>
+      </label>
+      <label for="broke">What broke, or what worries you? (optional)<textarea id="broke" name="broke" rows="3" placeholder="Our Facebook leads stopped reaching the CRM last week"></textarea></label>
+      <button class="cta" type="submit">Request my free check</button>
+      <p class="note" id="form-note">We only use your email to reply about your check.</p>
+    </form>
+    <p class="works" style="margin-top:12px">Flowkeep is independent and not affiliated with Zapier, Make, n8n or HighLevel.</p>
+  </section>
+</div>
+
+<script>
+(function () {
+  var form = document.getElementById('signup-form');
+  var note = document.getElementById('form-note');
+  var btn = form.querySelector('button[type="submit"]');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!form.email.value || form.email.validity.typeMismatch) { note.className = 'note'; note.textContent = 'Please enter a valid email so we can reply.'; form.email.focus(); return; }
+    btn.disabled = true; note.className = 'note'; note.textContent = 'Sending...';
+    var data = JSON.stringify(Object.fromEntries(new FormData(form)));
+    fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: data })
+      .then(function (r) { return r.json().then(function (j) { return { ok: r.status === 200, j: j }; }); })
+      .then(function (res) {
+        if (res.ok) {
+          form.reset(); note.className = 'done';
+          note.textContent = 'Got it. We will email you within one business day about your free check.';
+          // Google Ads: fire your conversion tag here once the ad account exists.
+          if (typeof window.flowkeepConversion === 'function') window.flowkeepConversion();
+        } else { note.className = 'note'; note.textContent = 'That did not send. Please try again in a minute.'; }
+      })
+      .catch(function () { note.className = 'note'; note.textContent = 'That did not send. Please check your connection and try again.'; })
+      .finally(function () { btn.disabled = false; });
+  });
+})();
+</script>
+</body>
+</html>
